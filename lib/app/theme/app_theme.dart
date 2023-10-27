@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:medicare/constants/assets_constants.dart';
 
 class AppTheme {
   // General
@@ -10,7 +11,7 @@ class AppTheme {
 
   // Text color
   static const Color textColor = Color(0XFF597393);
-  static const Color textHintColor = Colors.grey;
+  static const Color textSecondaryColor = Colors.grey;
 
   // Shimmer
   static const Color shimmerHighlightColor = Color(0xFFF9F9FB);
@@ -21,49 +22,82 @@ class AppTheme {
     primaryColor: primaryColor,
     textTheme: TextTheme(
       displayLarge: TextStyle(
-        color: textColor,
-        fontSize: 24.sp,
+        color: primaryColor,
+        fontSize: 28.sp,
+        fontWeight: FontWeight.w800,
+        fontFamily: AssetsConstants.gilroyFontFamily,
+      ),
+      displayMedium: TextStyle(
+        color: primaryColor,
+        fontSize: 28.sp,
         fontWeight: FontWeight.w600,
+        fontFamily: AssetsConstants.gilroyFontFamily,
       ),
       headlineLarge: TextStyle(
         color: textColor,
         fontSize: 20.sp,
         fontWeight: FontWeight.w600,
+        fontFamily: AssetsConstants.gilroyFontFamily,
       ),
       headlineMedium: TextStyle(
         color: textColor,
         fontSize: 18.sp,
         fontWeight: FontWeight.w600,
+        fontFamily: AssetsConstants.gilroyFontFamily,
+      ),
+      headlineSmall: TextStyle(
+        color: primaryColor,
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w700,
+        fontFamily: AssetsConstants.gilroyFontFamily,
+      ),
+      titleLarge: TextStyle(
+        color: primaryColor,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w600,
+        fontFamily: AssetsConstants.gilroyFontFamily,
+      ),
+      titleMedium: TextStyle(
+        color: textColor,
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w600,
+        fontFamily: AssetsConstants.gilroyFontFamily,
       ),
       titleSmall: TextStyle(
         color: textColor,
-        fontSize: 14.sp,
+        fontSize: 12.sp,
         fontWeight: FontWeight.w600,
+        fontFamily: AssetsConstants.proximaNovaFontFamily,
       ),
       bodyLarge: TextStyle(
-        color: textColor,
+        color: textSecondaryColor,
         fontSize: 16.sp,
         fontWeight: FontWeight.w600,
+        fontFamily: AssetsConstants.proximaNovaFontFamily,
       ),
       bodyMedium: TextStyle(
-        color: textColor,
+        color: textSecondaryColor,
         fontSize: 14.sp,
         fontWeight: FontWeight.w400,
+        fontFamily: AssetsConstants.proximaNovaFontFamily,
       ),
       bodySmall: TextStyle(
-        color: textColor,
+        color: textSecondaryColor,
         fontSize: 12.sp,
         fontWeight: FontWeight.w400,
+        fontFamily: AssetsConstants.proximaNovaFontFamily,
       ),
       labelMedium: TextStyle(
         color: textColor,
         fontSize: 10.sp,
         fontWeight: FontWeight.w600,
+        fontFamily: AssetsConstants.proximaNovaFontFamily,
       ),
       labelSmall: TextStyle(
         color: textColor,
         fontSize: 8.sp,
         fontWeight: FontWeight.w600,
+        fontFamily: AssetsConstants.proximaNovaFontFamily,
       ),
     ),
     colorScheme: const ColorScheme.light(
@@ -95,7 +129,7 @@ class AppTheme {
         fontWeight: FontWeight.bold,
       ),
       iconTheme: const IconThemeData(
-        color: textColor,
+        color: AppTheme.primaryColor,
       ),
     ),
   );

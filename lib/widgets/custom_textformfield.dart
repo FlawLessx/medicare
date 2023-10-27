@@ -68,7 +68,7 @@ class CustomTextFormField extends StatelessWidget {
         floatingLabelBehavior: labelBehavior,
         hintStyle: TextStyle(
           fontSize: 14.sp,
-          color: AppTheme.textHintColor,
+          color: AppTheme.textSecondaryColor,
         ),
         border: !useDecoration
             ? InputBorder.none
