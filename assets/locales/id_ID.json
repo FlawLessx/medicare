@@ -1,0 +1,70 @@
+{
+  "login": {
+    "title_hi": "Hai, ",
+    "title_welcome": "Selamat Datang",
+    "description": "Silahkan login untuk melanjutkan",
+    "forgot_password": "Lupa Password anda ?",
+    "login": "Login",
+    "dont_have_account": "Belum punya akun ?",
+    "register_now": "Daftar sekarang",
+    "register": "Register",
+    "have_account": "Sudah punya akun ?",
+    "login_now": "Login sekarang"
+  },
+  "home": {
+    "menu_1_title_solution": "Solusi",
+    "menu_1_title_your_health": "Kesehatan Anda",
+    "menu_1_description": "Update informasi seputar kesehatan semua bisa disini !",
+    "menu_2_title": "Layanan Khusus",
+    "menu_2_description": "Tes Covid 19, Cegah Corona Sedini Mungkin",
+    "menu_2_button": "Daftar Tes",
+    "menu_3_title": "Track Pemeriksaan",
+    "menu_3_description": "Kamu dapat mengecek progress pemeriksaanmu disini",
+    "menu_3_button": "Track",
+    "all_product": "All Product",
+    "health_service": "Layanan Kesehatan",
+    "health_tool": "Alat Kesehatan",
+    "choose_health_type": "Pilih Tipe Layanan Kesehatan Anda",
+    "health_type_unit": "Satuan",
+    "health_type_group": "Paket Pemeriksaan"
+  },
+  "sidebar": {
+    "my_profile": "Profile Saya",
+    "settings": "Pengaturan",
+    "follow_us": "Ikuti kami di",
+    "logout": "Logout"
+  },
+  "profile": {
+    "description": "Lengkapi profile anda untuk memaksimalkan penggunaan aplikasi",
+    "data_type": "Pilih data yang ingin ditampilkan",
+    "personal_data": "Data Diri",
+    "personal_data_description": "Data diri anda sesuai KTP",
+    "tooltip_information": "Pastikan profile anda terisi dengan benar, data pribadi anda terjamin keamanannya",
+    "save_profile": "Simpan Profile"
+  },
+  "general": {
+    "email": "Email",
+    "email_required": "Masukkan email anda",
+    "password": "Password",
+    "password_required": "Masukkan password anda",
+    "confirm_password": "Konfirmasi Password",
+    "confirm_password_required": "Konfirmasi password anda",
+    "front_name": "Nama Depan",
+    "front_name_required": "Masukkan nama depan anda",
+    "back_name": "Nama Belakang",
+    "back_name_required": "Masukkan nama belakang anda",
+    "identity": "No. KTP",
+    "identity_required": "Masukkan No. KTP anda",
+    "phone_number": "No. Telpon",
+    "phone_number_required": "Masukkan No. Telpon anda",
+    "more": "Selengkapnya",
+    "search": "Search",
+    "show_more": "Tampilkan Lebih Banyak",
+    "get_more_updates": "Ingin mendapat update dari kami ?",
+    "get_notification": "Dapatkan notifikasi"
+  },
+  "snackbar": {
+    "success": "Success",
+    "error": "Error"
+  }
+}

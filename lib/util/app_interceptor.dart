@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:medicare/app/app.dart';
+import 'package:medicare/constants/prefs_constants.dart';
 import 'package:medicare/constants/route_constants.dart';
 import 'package:medicare/data/local/shared_preferences_wrapper.dart';
 
@@ -13,8 +14,8 @@ class AppInterceptors extends Interceptor {
       RequestOptions options, RequestInterceptorHandler handler) async {
     final preferencesWrapper = Modular.get<SharedPreferencesWrapper>();
 
-    var dataCookie = await preferencesWrapper.getString('cookies') ?? '';
-    options.headers['cookie'] = dataCookie;
+    var token = await preferencesWrapper.getString(PrefConstants.token) ?? '';
+    options.headers['Authorization'] = 'Bearer $token';
 
     if (options.headers['Accept'] == null) {
       options.headers['Accept'] = 'application/json';

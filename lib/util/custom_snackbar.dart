@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -30,13 +31,13 @@ void showSnackbar(
             Column(
               children: [
                 Text(
-                  isSuccess ? "Success" : "Error Occured",
+                  isSuccess ? "snackbar.success" : "snackbar.error",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.bold,
                   ),
-                ),
+                ).tr(),
                 Text(
                   message,
                   style: TextStyle(
