@@ -6,6 +6,7 @@ import 'package:medicare/constants/assets_constants.dart';
 class AppTheme {
   // General
   static const Color primaryColor = Color(0xFF002060);
+  static const Color primaryShadowColor = Color(0xFF1D334F);
   static const Color backgroundColor = Colors.white;
   static const Color shadowColor = Color(0xFFBEBEBE);
 

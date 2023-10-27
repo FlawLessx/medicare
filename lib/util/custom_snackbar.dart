@@ -27,8 +27,9 @@ void showSnackbar(
               isSuccess ? Icons.check_circle : Icons.warning,
               color: Colors.white,
             ),
-            Gap(5.w),
+            Gap(10.w),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   isSuccess ? "snackbar.success" : "snackbar.error",

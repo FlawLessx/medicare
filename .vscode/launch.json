@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Timesheet App Development",
+      "name": "Medicare",
       "request": "launch",
       "type": "dart",
       "program": "lib/flavor/main_development.dart",

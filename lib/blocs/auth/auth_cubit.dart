@@ -12,11 +12,25 @@ class AuthCubit extends Cubit<AuthState> {
   final authRepository = Modular.get<AuthRepository>();
   final preferencesWrapper = Modular.get<SharedPreferencesWrapper>();
 
-  void signIn(String username, String password) async {
+  void signIn(String email, String password) async {
     try {
       emit(AuthLoading());
 
-      await authRepository.login(username, password);
+      await authRepository.login(email, password);
+
+      emit(Authenticated());
+    } on AppException catch (e) {
+      emit(AuthFailed(message: e.message));
+    } catch (e) {
+      emit(AuthFailed());
+    }
+  }
+
+  void register(String email, String password) async {
+    try {
+      emit(AuthLoading());
+
+      await authRepository.register(email, password);
 
       emit(Authenticated());
     } on AppException catch (e) {

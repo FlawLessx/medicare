@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:medicare/app/app.dart';
 import 'package:medicare/constants/prefs_constants.dart';
-import 'package:medicare/constants/route_constants.dart';
+import 'package:medicare/constants/routes_constants.dart';
 import 'package:medicare/data/local/shared_preferences_wrapper.dart';
 
 import 'custom_snackbar.dart';
@@ -26,13 +26,14 @@ class AppInterceptors extends Interceptor {
 
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) async {
-    // log(err.response!.requestOptions.uri.toString());
-    // print(err.response!.data.toString());
     if (appContext != null) {
       if (err.response?.statusCode == 401 &&
-          ModalRoute.of(appContext!)!.settings.name != RouteConstants.login) {
+          ModalRoute.of(appContext!)!.settings.name != RoutesConstants.login) {
+        final preferencesWrapper = Modular.get<SharedPreferencesWrapper>();
+        await preferencesWrapper.setBool(PrefConstants.loggedIn, false);
+
         await Modular.to.pushNamedAndRemoveUntil(
-          RouteConstants.login,
+          RoutesConstants.login,
           (route) => route.isFirst,
         );
 
@@ -44,13 +45,12 @@ class AppInterceptors extends Interceptor {
 
         return handler.reject(err);
       } else if (err.response != null &&
-          err.response!.data.toString().contains('message')) {
-        if (err.response!.data is Map &&
-            err.response!.data['message'] != null) {
-          showSnackbar(appContext!, err.response!.data['message'], false);
+          err.response!.data.toString().contains('error')) {
+        if (err.response!.data is Map && err.response!.data['error'] != null) {
+          showSnackbar(appContext!, err.response!.data['error'], false);
         } else {
           final message =
-              '${err.response!.data.toString().split('"message":').last.split('"').first}"';
+              '${err.response!.data.toString().split('"error":').last.split('"').first}"';
           showSnackbar(appContext!, message, false);
         }
       }

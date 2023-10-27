@@ -14,9 +14,20 @@ class AuthRepository {
     _dataSource = AuthDatasource();
   }
 
-  Future<void> login(String username, String password) async {
+  Future<void> login(String email, String password) async {
     try {
-      final token = await _dataSource.login(username, password);
+      final token = await _dataSource.login(email, password);
+      await _preferencesWrapper.setString(PrefConstants.token, token);
+      await _preferencesWrapper.setBool(PrefConstants.loggedIn, true);
+    } catch (e) {
+      log("Login Error: $e");
+      throw AppException('Something went wrong, please try again later...');
+    }
+  }
+
+  Future<void> register(String email, String password) async {
+    try {
+      final token = await _dataSource.register(email, password);
       await _preferencesWrapper.setString(PrefConstants.token, token);
       await _preferencesWrapper.setBool(PrefConstants.loggedIn, true);
     } catch (e) {

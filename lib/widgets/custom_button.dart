@@ -15,6 +15,7 @@ class CustomButton extends StatelessWidget {
     this.icon,
     this.fontSize,
     this.color,
+    this.suffixIcon,
   }) : assert(title == null || child == null);
   final String? title;
   final Function()? onTap;
@@ -26,19 +27,27 @@ class CustomButton extends StatelessWidget {
   final Widget? icon;
   final double? fontSize;
   final Color? color;
+  final Icon? suffixIcon;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: loading ? null : onTap,
       child: Container(
-        height: height ?? 40.h,
+        height: height ?? 48.h,
         width: width ?? double.maxFinite,
         padding: EdgeInsets.symmetric(horizontal: 15.w),
         decoration: BoxDecoration(
           color: isOutline ? null : AppTheme.primaryColor,
-          borderRadius: BorderRadius.circular(10.w),
+          borderRadius: BorderRadius.circular(8.w),
           border: isOutline ? Border.all(width: 1) : null,
+          boxShadow: [
+            BoxShadow(
+              color: AppTheme.primaryShadowColor.withOpacity(0.24),
+              offset: const Offset(0, 16),
+              blurRadius: 24,
+            ),
+          ],
         ),
         child: Center(
           child: loading
@@ -58,22 +67,35 @@ class CustomButton extends StatelessWidget {
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    if (icon != null)
-                      Padding(
-                        padding: EdgeInsets.only(right: 8.w),
-                        child: icon!,
+                    if (suffixIcon != null)
+                      SizedBox(
+                        width: suffixIcon!.size,
                       ),
-                    child ??
-                        Text(
-                          title!,
-                          style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: isOutline
-                                        ? color ?? AppTheme.textColor
-                                        : Colors.white,
-                                    fontSize: 14.sp,
-                                  ),
-                        ),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          if (icon != null)
+                            Padding(
+                              padding: EdgeInsets.only(right: 8.w),
+                              child: icon!,
+                            ),
+                          child ??
+                              Text(
+                                title!,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge!
+                                    .copyWith(
+                                      color: isOutline
+                                          ? color ?? AppTheme.textColor
+                                          : Colors.white,
+                                    ),
+                              ),
+                        ],
+                      ),
+                    ),
+                    if (suffixIcon != null) suffixIcon!
                   ],
                 ),
         ),

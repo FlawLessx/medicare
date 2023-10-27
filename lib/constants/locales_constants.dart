@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class LocaleConstants {
+class LocalesConstants {
   static const Locale id = Locale('id', 'ID');
 
   static const Map<String, String> localeMap = {

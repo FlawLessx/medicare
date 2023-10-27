@@ -1,4 +1,8 @@
 class AssetsConstants {
+  // Animations
+  static const String animationPath = 'assets/animations';
+  static const String animsLoading = '$animationPath/loading.json';
+
   // Fonts
   static const String fontPath = 'assets/fonts';
   static const String gilroyFontFamily = 'Gilroy';
@@ -11,7 +15,6 @@ class AssetsConstants {
   // Images
   //
   static const String imagePath = 'assets/images';
-
   static const String welcome = '$imagePath/welcome.png';
   static const String calendar = '$imagePath/calendar.svg';
   static const String drugs = '$imagePath/drugs.svg';
