@@ -25,6 +25,7 @@ class CustomTextFormField extends StatelessWidget {
     this.focusNode,
     this.errorText,
     this.textCapitalization,
+    this.borderRadius,
   });
 
   final String? title;
@@ -47,6 +48,7 @@ class CustomTextFormField extends StatelessWidget {
   final FocusNode? focusNode;
   final String? errorText;
   final TextCapitalization? textCapitalization;
+  final double? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +63,7 @@ class CustomTextFormField extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             color: Theme.of(context).scaffoldBackgroundColor,
-            borderRadius: BorderRadius.circular(8.w),
+            borderRadius: BorderRadius.circular(borderRadius ?? 8.w),
             boxShadow: [
               BoxShadow(
                 color: AppTheme.shadowColor.withOpacity(0.16),
@@ -96,7 +98,7 @@ class CustomTextFormField extends StatelessWidget {
               border: InputBorder.none,
               enabledBorder: InputBorder.none,
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8.w),
+                borderRadius: BorderRadius.circular(borderRadius ?? 8.w),
                 borderSide: BorderSide(
                   color: AppTheme.primaryColor.withOpacity(0.5),
                   width: 3,

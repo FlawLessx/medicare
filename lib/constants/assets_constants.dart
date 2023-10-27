@@ -20,7 +20,9 @@ class AssetsConstants {
   static const String drugs = '$imagePath/drugs.svg';
   static const String ornamen = '$imagePath/ornamen.svg';
   static const String ornamen2 = '$imagePath/ornamen_2.svg';
-  static const String search = '$imagePath/csearch.svg';
+  static const String search = '$imagePath/search.svg';
+  static const String menuPrimaryBackground =
+      '$imagePath/menu_primary_background.png';
 
   //
   // Icons

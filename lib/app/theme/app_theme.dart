@@ -67,7 +67,7 @@ class AppTheme {
       titleSmall: TextStyle(
         color: textColor,
         fontSize: 12.sp,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w400,
         fontFamily: AssetsConstants.proximaNovaFontFamily,
       ),
       bodyLarge: TextStyle(

@@ -13,4 +13,9 @@ generateRoutes(RouteManager r) {
     child: (context) => const LoginPage(),
     transition: TransitionType.fadeIn,
   );
+  r.child(
+    RoutesConstants.home,
+    child: (context) => const HomePage(),
+    transition: TransitionType.fadeIn,
+  );
 }

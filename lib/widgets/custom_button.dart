@@ -36,7 +36,7 @@ class CustomButton extends StatelessWidget {
       child: Container(
         height: height ?? 48.h,
         width: width ?? double.maxFinite,
-        padding: EdgeInsets.symmetric(horizontal: 15.w),
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
         decoration: BoxDecoration(
           color: isOutline ? null : AppTheme.primaryColor,
           borderRadius: BorderRadius.circular(8.w),
@@ -87,6 +87,11 @@ class CustomButton extends StatelessWidget {
                                     .textTheme
                                     .titleLarge!
                                     .copyWith(
+                                      fontSize: fontSize ??
+                                          Theme.of(context)
+                                              .textTheme
+                                              .titleLarge!
+                                              .fontSize,
                                       color: isOutline
                                           ? color ?? AppTheme.textColor
                                           : Colors.white,
