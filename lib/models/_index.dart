@@ -1,2 +1,4 @@
 export 'menu.dart';
-export 'resource.dart';
+export 'product.dart';
+export 'category.dart';
+export 'service.dart';

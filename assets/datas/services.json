@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "PCR Swab Test (Drive Thru) Hasil 1 Hari Kerja",
+    "image": "https://th.bing.com/th/id/OIP.jJ2sium-vMOxjnjQKl8YWwHaDt?pid=ImgDet&rs=1",
+    "hospital": "Lenmarc Surabaya",
+    "location": "Dukuh Pakis, Surabaya",
+    "price": "Rp. 1.400.000",
+    "category_id": 1
+  },
+  {
+    "id": 2,
+    "name": "PCR Swab Test (Drive Thru) Hasil 1 Hari Kerja",
+    "image": "https://th.bing.com/th/id/OIP.Q65xPSdAFWPahcni0IlXvwHaD8?pid=ImgDet&rs=1",
+    "hospital": "Siloam Jakarta",
+    "location": "Jakarta",
+    "price": "Rp. 1.480.000",
+    "category_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Test Darah Lengkap",
+    "image": "https://th.bing.com/th/id/OIP.qEWeaGwY2ehPz-e5CIvMlgAAAA?pid=ImgDet&rs=1",
+    "hospital": "Husada",
+    "location": "Bogor",
+    "price": "Rp. 1.080.000",
+    "category_id": 2
+  },
+  {
+    "id": 2,
+    "name": "Test Darah Lengkap",
+    "image": "https://th.bing.com/th/id/OIP.Q65xPSdAFWPahcni0IlXvwHaD8?pid=ImgDet&rs=1",
+    "hospital": "Siloam Jakarta",
+    "location": "Jakarta",
+    "price": "Rp. 1.000.000",
+    "category_id": 2
+  }
+]

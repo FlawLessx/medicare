@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Suntik Steril",
+    "image": "https://th.bing.com/th/id/R.d499173783b8d636554a602fa6d13c32?rik=koZENcf8yNirIA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fsyringe-png-png-syringe-png-1887.png&ehk=Xz%2bDj%2fcAbm0rMPG%2f3pKYmEU3sRIhNuZvQ1RT4IC9RKQ%3d&risl=&pid=ImgRaw&r=0",
+    "rating": 4.1,
+    "category_id": 1,
+    "price": "Rp. 100.000",
+    "stock": "ready"
+  },
+  {
+    "id": 2,
+    "name": "Stetoskop",
+    "image": "https://pngimg.com/d/stethoscope_PNG97.png",
+    "rating": 4.5,
+    "category_id": 2,
+    "price": "Rp. 150.000",
+    "stock": "empty"
+  },
+  {
+    "id": 3,
+    "name": "Sphygmomanometer",
+    "image": "https://pluspng.com/img-png/sphygmomanometer-png-deluxe-aneroid-sphygmomanometer-adult-black-800.png",
+    "rating": 5.0,
+    "category_id": 3,
+    "price": "Rp. 40.000",
+    "stock": "ready"
+  }
+]

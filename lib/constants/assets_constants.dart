@@ -6,7 +6,7 @@ class AssetsConstants {
   // Fonts
   static const String fontPath = 'assets/fonts';
   static const String gilroyFontFamily = 'Gilroy';
-  static const String proximaNovaFontFamily = 'Proxima Nova';
+  static const String milliardFontFamily = 'Milliard';
 
   // Locales
   static const String localePath = 'assets/locales';
@@ -34,4 +34,11 @@ class AssetsConstants {
   static const String icFacebook = '$iconPath/facebook.svg';
   static const String icTwitter = '$iconPath/twitter.svg';
   static const String icInstagram = '$iconPath/instagram.svg';
+
+  // Datas
+  static const String dataPath = 'assets/datas';
+  static const String dataCategoryProduct = '$dataPath/category_product.json';
+  static const String dataCategoryService = '$dataPath/category_service.json';
+  static const String dataProducts = '$dataPath/products.json';
+  static const String dataServices = '$dataPath/services.json';
 }

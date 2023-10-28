@@ -6,5 +6,11 @@ List initBlocProvider() {
     BlocProvider<AuthCubit>(
       create: (context) => AuthCubit(),
     ),
+    BlocProvider<ProductCubit>(
+      create: (context) => ProductCubit(),
+    ),
+    BlocProvider<ServiceCubit>(
+      create: (context) => ServiceCubit(),
+    ),
   ];
 }

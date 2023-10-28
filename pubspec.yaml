@@ -28,8 +28,10 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animated_toggle_switch: ^0.8.0
   awesome_dio_interceptor: ^1.0.0
   bloc: ^8.1.2
+  cached_network_image: ^3.3.0
   cupertino_icons: ^1.0.2
   dio: ^5.3.2
   easy_localization: ^3.0.3
@@ -75,6 +77,7 @@ flutter:
     - assets/icons/
     - assets/fonts/
     - assets/locales/
+    - assets/datas/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
@@ -92,8 +95,8 @@ flutter:
         - asset: assets/fonts/Gilroy-Semibold.ttf
         - asset: assets/fonts/Gilroy-Bold.ttf
         - asset: assets/fonts/Gilroy-ExtraBold.otf
-    - family: Proxima Nova
+    - family: Milliard
       fonts:
-        - asset: assets/fonts/ProximaNova-Regular.otf
+        - asset: assets/fonts/Milliard-Book.otf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
