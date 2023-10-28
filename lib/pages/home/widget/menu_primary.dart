@@ -9,6 +9,7 @@ import 'package:medicare/constants/assets_constants.dart';
 import 'package:medicare/models/_index.dart';
 import 'package:medicare/widgets/custom_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 class MenuPrimary extends StatelessWidget {
   const MenuPrimary({super.key});
@@ -18,155 +19,165 @@ class MenuPrimary extends StatelessWidget {
     return GetBuilder(
       init: MenuPrimaryController(),
       builder: (controller) {
-        return Container(
-          height: 200.h,
-          margin: EdgeInsets.symmetric(horizontal: 15.w),
-          child: Stack(
-            children: [
-              Positioned.fill(
-                top: 40.h,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).scaffoldBackgroundColor,
-                    borderRadius: BorderRadius.circular(8.w),
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppTheme.primaryColor.withOpacity(0.24),
-                        offset: const Offset(0, 16),
-                        blurRadius: 24,
+        return VisibilityDetector(
+          key: const Key('MenuPrimary'),
+          onVisibilityChanged: (visibilityInfo) {
+            if (visibilityInfo.visibleFraction > 0) {
+              controller.animationController.forward();
+            } else {
+              controller.animationController.reverse();
+            }
+          },
+          child: Container(
+            height: 200.h,
+            margin: EdgeInsets.symmetric(horizontal: 15.w),
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  top: 40.h,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).scaffoldBackgroundColor,
+                      borderRadius: BorderRadius.circular(8.w),
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppTheme.primaryColor.withOpacity(0.24),
+                          offset: const Offset(0, 16),
+                          blurRadius: 24,
+                        )
+                      ],
+                    ),
+                    child: Image.asset(
+                      AssetsConstants.menuPrimaryBackground,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Positioned.fill(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Expanded(
+                        flex: 6,
+                        child: SizedBox.shrink(),
+                      ),
+                      Expanded(
+                        flex: 4,
+                        child: Obx(
+                          () => Animate(
+                            controller: controller.animationController,
+                            effects: const [
+                              FadeEffect(duration: Duration(milliseconds: 300))
+                            ],
+                            child: SvgPicture.asset(
+                              controller
+                                  .menus[controller.selectedMenu.value].image,
+                              height: 160.h,
+                              fit: controller.selectedMenu.value == 0
+                                  ? BoxFit.cover
+                                  : BoxFit.contain,
+                            ),
+                          ),
+                        ),
                       )
                     ],
                   ),
-                  child: Image.asset(
-                    AssetsConstants.menuPrimaryBackground,
-                    fit: BoxFit.cover,
-                  ),
                 ),
-              ),
-              Positioned.fill(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Expanded(
-                      flex: 6,
-                      child: SizedBox.shrink(),
-                    ),
-                    Expanded(
-                      flex: 4,
-                      child: Obx(
-                        () => Animate(
-                          controller: controller.animationController,
-                          effects: const [
-                            FadeEffect(duration: Duration(milliseconds: 500))
-                          ],
-                          child: SvgPicture.asset(
-                            controller
-                                .menus[controller.selectedMenu.value].image,
-                            height: 160.h,
-                            fit: controller.selectedMenu.value == 0
-                                ? BoxFit.cover
-                                : BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              Positioned.fill(
-                top: 40.h,
-                child: PageView.builder(
-                  onPageChanged: controller.onPageChanged,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.all(15.w),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            flex: 6,
-                            child: Column(
-                              children: [
-                                RichText(
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text:
-                                            '${controller.menus[index].title.split(',').first}, ',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headlineMedium!
-                                            .copyWith(
-                                              fontWeight: FontWeight.w600,
-                                              color: Theme.of(context)
-                                                  .primaryColor,
-                                            ),
-                                      ),
-                                      TextSpan(
-                                        text: controller.menus[index].title
-                                            .split(',')
-                                            .last,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headlineMedium!
-                                            .copyWith(
-                                              fontWeight: FontWeight.w800,
-                                              color: Theme.of(context)
-                                                  .primaryColor,
-                                            ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Center(
-                                    child: Text(
-                                      controller.menus[index].subtitle,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleSmall,
+                Positioned.fill(
+                  top: 40.h,
+                  child: PageView.builder(
+                    onPageChanged: controller.onPageChanged,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: EdgeInsets.all(15.w),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              flex: 6,
+                              child: Column(
+                                children: [
+                                  RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text:
+                                              '${controller.menus[index].title.split(',').first}, ',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headlineMedium!
+                                              .copyWith(
+                                                fontWeight: FontWeight.w600,
+                                                color: Theme.of(context)
+                                                    .primaryColor,
+                                              ),
+                                        ),
+                                        TextSpan(
+                                          text: controller.menus[index].title
+                                              .split(',')
+                                              .last,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headlineMedium!
+                                              .copyWith(
+                                                fontWeight: FontWeight.w800,
+                                                color: Theme.of(context)
+                                                    .primaryColor,
+                                              ),
+                                        )
+                                      ],
                                     ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(right: 40.w),
-                                  child: CustomButton(
-                                    title: tr('general.more'),
-                                    height: 32.h,
-                                    fontSize: 12.sp,
+                                  Expanded(
+                                    child: Center(
+                                      child: Text(
+                                        controller.menus[index].subtitle,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .titleSmall,
+                                      ),
+                                    ),
                                   ),
-                                )
-                              ],
+                                  Padding(
+                                    padding: EdgeInsets.only(right: 40.w),
+                                    child: CustomButton(
+                                      title: tr('general.more'),
+                                      height: 32.h,
+                                      fontSize: 12.sp,
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
-                          ),
-                          const Expanded(
-                            flex: 4,
-                            child: SizedBox.shrink(),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                  itemCount: controller.menus.length,
-                ),
-              ),
-              Positioned(
-                bottom: 20.h,
-                right: 20.w,
-                child: Obx(
-                  () => AnimatedSmoothIndicator(
-                    count: controller.menus.length,
-                    effect: ExpandingDotsEffect(
-                      dotWidth: 8.h,
-                      dotHeight: 8.h,
-                      dotColor: Colors.white,
-                      activeDotColor: Colors.white,
-                    ),
-                    onDotClicked: controller.onPageChanged,
-                    activeIndex: controller.selectedMenu.value,
+                            const Expanded(
+                              flex: 4,
+                              child: SizedBox.shrink(),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                    itemCount: controller.menus.length,
                   ),
                 ),
-              )
-            ],
+                Positioned(
+                  bottom: 20.h,
+                  right: 20.w,
+                  child: Obx(
+                    () => AnimatedSmoothIndicator(
+                      count: controller.menus.length,
+                      effect: ExpandingDotsEffect(
+                        dotWidth: 8.h,
+                        dotHeight: 8.h,
+                        dotColor: Colors.white,
+                        activeDotColor: Colors.white,
+                      ),
+                      onDotClicked: controller.onPageChanged,
+                      activeIndex: controller.selectedMenu.value,
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         );
       },

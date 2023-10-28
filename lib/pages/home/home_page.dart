@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           body: ListView(
-            cacheExtent: 3000,
+            cacheExtent: 4000,
             children: [
               const MenuPrimary(),
               MenuSecondary(

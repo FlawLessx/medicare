@@ -143,26 +143,29 @@ class ListProducts extends StatelessWidget {
           );
         }
 
-        return SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [1, 2, 3]
-                .asMap()
-                .entries
-                .map(
-                  (e) => Padding(
-                    padding: EdgeInsets.only(
-                      right: 15.w,
-                      left: e.key == 0 ? 15.w : 0,
+        return Padding(
+          padding: EdgeInsets.only(bottom: 24.h),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [1, 2, 3]
+                  .asMap()
+                  .entries
+                  .map(
+                    (e) => Padding(
+                      padding: EdgeInsets.only(
+                        right: 15.w,
+                        left: e.key == 0 ? 15.w : 0,
+                      ),
+                      child: ShimmerWidget(
+                        height: 140.h,
+                        width: 140.h,
+                        radius: 8.w,
+                      ),
                     ),
-                    child: ShimmerWidget(
-                      height: 140.h,
-                      width: 140.h,
-                      radius: 8.w,
-                    ),
-                  ),
-                )
-                .toList(),
+                  )
+                  .toList(),
+            ),
           ),
         );
       },
