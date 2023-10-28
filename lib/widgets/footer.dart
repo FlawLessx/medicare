@@ -17,7 +17,7 @@ class Footer extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            right: 60.w,
+            right: 80.w,
             top: 20.h,
             child: SvgPicture.asset(
               AssetsConstants.ornamen,

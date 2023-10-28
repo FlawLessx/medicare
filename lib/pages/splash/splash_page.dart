@@ -16,14 +16,8 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    init();
-    super.initState();
-  }
-
-  Future<void> init() async {
-    await Future.delayed(const Duration(seconds: 3));
-    // ignore: use_build_context_synchronously
     BlocProvider.of<AuthCubit>(context).checkLogin();
+    super.initState();
   }
 
   @override

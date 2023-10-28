@@ -9,6 +9,7 @@ import 'package:medicare/app/app.dart';
 import 'package:medicare/blocs/_index.dart';
 import 'package:medicare/constants/assets_constants.dart';
 import 'package:medicare/widgets/shimmer_widget.dart';
+import 'package:medicare/widgets/toggle_switch.dart';
 
 import 'service_item.dart.dart';
 
@@ -44,54 +45,14 @@ class ListServices extends StatelessWidget {
           return Obx(
             () => SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 15.w),
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 0),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).scaffoldBackgroundColor,
-                  borderRadius: BorderRadius.circular(50.w),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppTheme.shadowColor.withOpacity(0.16),
-                      offset: const Offset(0, 16),
-                      blurRadius: 24,
-                    )
-                  ],
-                ),
-                child: Row(
-                  children: state.datas
-                      .asMap()
-                      .entries
-                      .map(
-                        (e) => GestureDetector(
-                          onTap: () {
-                            controller.selectedCategoryIndex.value = e.key;
-                            BlocProvider.of<ServiceCubit>(context)
-                                .lists(e.value.id);
-                          },
-                          child: Chip(
-                            backgroundColor:
-                                controller.selectedCategoryIndex.value == e.key
-                                    ? AppTheme.secondaryColor
-                                    : Colors.white,
-                            elevation: 0,
-                            shadowColor: Colors.transparent,
-                            label: Text(
-                              e.value.name,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(
-                                    color: Theme.of(context).primaryColor,
-                                  ),
-                            ),
-                          ),
-                        ),
-                      )
-                      .toList(),
-                ),
+              child: ToggleSwitch(
+                datas: state.datas.map((e) => e.name).toList(),
+                selectedIndex: controller.selectedCategoryIndex.value,
+                onTap: (index) {
+                  controller.selectedCategoryIndex.value = index;
+                  BlocProvider.of<ServiceCubit>(context)
+                      .lists(state.datas[index].id);
+                },
               ),
             ),
           );

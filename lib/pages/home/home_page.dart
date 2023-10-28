@@ -92,10 +92,31 @@ class _HomePageState extends State<HomePage> {
                     ),
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(
-                        Icons.notifications,
-                        color: Theme.of(context).primaryColor,
-                        size: 24.h,
+                      icon: Stack(
+                        children: [
+                          Icon(
+                            Icons.notifications,
+                            color: Theme.of(context).primaryColor,
+                            size: 24.h,
+                          ),
+                          Positioned(
+                            top: 2.h,
+                            right: 5.w,
+                            child: Container(
+                              height: 5.h,
+                              width: 5.h,
+                              decoration: BoxDecoration(
+                                color: AppTheme.red,
+                                borderRadius: BorderRadius.circular(50.w),
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: 2,
+                                  strokeAlign: BorderSide.strokeAlignOutside,
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
                       ),
                     )
                   ],

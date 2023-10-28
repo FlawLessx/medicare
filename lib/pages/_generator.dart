@@ -18,4 +18,11 @@ generateRoutes(RouteManager r) {
     child: (context) => const HomePage(),
     transition: TransitionType.fadeIn,
   );
+  r.child(
+    RoutesConstants.profile,
+    child: (context) => ProfilePage(
+      selectedPage: r.args.data,
+    ),
+    transition: TransitionType.rightToLeft,
+  );
 }

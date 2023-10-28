@@ -1,12 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:medicare/app/app.dart';
 import 'package:medicare/blocs/_index.dart';
 import 'package:medicare/constants/assets_constants.dart';
+import 'package:medicare/constants/routes_constants.dart';
 import 'package:medicare/pages/home/home_controller.dart';
 import 'package:medicare/widgets/custom_button.dart';
 import 'package:medicare/widgets/custom_image.dart';
@@ -59,7 +61,11 @@ class Sidebar extends StatelessWidget {
                     profile(),
                     Gap(20.h),
                     ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Modular.to
+                            .pushNamed(RoutesConstants.profile, arguments: 0);
+                        controller.key.currentState!.closeEndDrawer();
+                      },
                       visualDensity: VisualDensity.compact,
                       title: Text(
                         tr('sidebar.my_profile'),
@@ -75,7 +81,11 @@ class Sidebar extends StatelessWidget {
                       ),
                     ),
                     ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Modular.to
+                            .pushNamed(RoutesConstants.profile, arguments: 1);
+                        controller.key.currentState!.closeEndDrawer();
+                      },
                       visualDensity: VisualDensity.compact,
                       title: Text(
                         tr('sidebar.settings'),
