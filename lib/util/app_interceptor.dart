@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -14,11 +16,15 @@ class AppInterceptors extends Interceptor {
       RequestOptions options, RequestInterceptorHandler handler) async {
     final preferencesWrapper = Modular.get<SharedPreferencesWrapper>();
 
-    var token = await preferencesWrapper.getString(PrefConstants.token) ?? '';
-    options.headers['Authorization'] = 'Bearer $token';
+    try {
+      var token = await preferencesWrapper.getString(PrefConstants.token) ?? '';
+      options.headers['Authorization'] = 'Bearer $token';
 
-    if (options.headers['Accept'] == null) {
-      options.headers['Accept'] = 'application/json';
+      if (options.headers['Accept'] == null) {
+        options.headers['Accept'] = 'application/json';
+      }
+    } catch (e) {
+      log(e.toString());
     }
 
     return handler.next(options);

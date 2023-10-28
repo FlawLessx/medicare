@@ -5,4 +5,5 @@ generateRepository(Injector i) {
   i.addLazySingleton(() => AuthRepository());
   i.addLazySingleton(() => ProductRepository());
   i.addLazySingleton(() => ServiceRepository());
+  i.addLazySingleton(() => UserRepository());
 }

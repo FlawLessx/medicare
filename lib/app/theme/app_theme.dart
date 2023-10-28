@@ -23,6 +23,7 @@ class AppTheme {
 
   // Etc
   static const Color orange = Color(0xFFFF7200);
+  static const Color red = Color(0xFFEB0004);
   static const Color greenBackground = Color(0xFFB3FFCB);
   static const Color redBackground = Color.fromARGB(255, 243, 165, 165);
 
