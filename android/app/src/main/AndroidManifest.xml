@@ -2,16 +2,7 @@
     package="com.flawlessx.medicare">
 
     <!-- Provide required visibility configuration for API level 30 and above -->
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="https" />
-        </intent>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="http" />
-        </intent>
-    </queries>
+   <uses-permission android:name="android.permission.INTERNET" />
 
    <application
         android:label="@string/app_name"

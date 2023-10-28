@@ -33,6 +33,7 @@ class _AppState extends State<App> {
     ]);
 
     return ScreenUtilInit(
+      designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
