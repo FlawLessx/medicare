@@ -1,4 +1,4 @@
-package com.flawlessx.medicare
+package com.flawlessx.medicareapp
 
 import io.flutter.embedding.android.FlutterActivity
 

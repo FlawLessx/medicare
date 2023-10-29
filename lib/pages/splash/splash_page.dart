@@ -23,10 +23,12 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthCubit, AuthState>(
-      listener: (context, state) {
+      listener: (context, state) async {
         if (state is Authenticated) {
+          await Future.delayed(const Duration(seconds: 2));
           Modular.to.pushReplacementNamed(RoutesConstants.home);
         } else {
+          await Future.delayed(const Duration(seconds: 2));
           Modular.to.pushReplacementNamed(RoutesConstants.login);
         }
       },

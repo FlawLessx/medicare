@@ -1,4 +1,6 @@
-# Timesheet Apps
+# Medicare
+
+This is a showcase application for Vasscomm test, with healthcare UI, dummy api from reqres.in & json assets.
 
 ## Getting Started
 
@@ -9,8 +11,6 @@
 
 Varriant flavor:
 
-1. dev
+1. dev `flutter build apk --flavor dev --target lib/flavor/main_development.dart`
 
-Command
-
-1. Dev `flutter build apk --flavor dev --target lib/flavor/main_development.dart`
+## Showcase
