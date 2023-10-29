@@ -18,6 +18,6 @@ Or you can use generated apk file in this repository
 
 ## Showcase
 
-![](screencasts/video.mp4)
+screencasts/video.mp4
 
 Press play to see the video.
