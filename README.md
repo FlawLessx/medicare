@@ -18,6 +18,7 @@ Or you can use generated apk file in this repository
 
 ## Showcase
 
-https://github.com/FlawLessx/medicare/assets/60551421/e00c6150-9cf8-4fc5-914d-70a8dbc39b94
+https://github.com/FlawLessx/medicare/assets/60551421/8c478cf8-73d8-490e-8910-6396b1444c64
 
 Press play to see the video.
+Note: if not loaded you can download itu from folder screencast/video.mp4
