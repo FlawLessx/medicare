@@ -18,6 +18,6 @@ Or you can use generated apk file in this repository
 
 ## Showcase
 
-screencasts/video.mp4
+https://github.com/FlawLessx/medicare/assets/60551421/e00c6150-9cf8-4fc5-914d-70a8dbc39b94
 
 Press play to see the video.
