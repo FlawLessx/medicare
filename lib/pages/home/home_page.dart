@@ -14,6 +14,7 @@ import 'package:medicare/pages/home/widget/menu_secondary.dart';
 import 'package:medicare/pages/home/widget/sidebar.dart';
 import 'package:medicare/widgets/custom_textformfield.dart';
 import 'package:medicare/widgets/footer.dart';
+import 'package:medicare/widgets/showcase_dialog.dart';
 
 import 'home_controller.dart';
 
@@ -83,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   actions: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () => showShowcaseDialog(context),
                       icon: Icon(
                         Icons.shopping_cart,
                         color: Theme.of(context).primaryColor,
@@ -91,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () => showShowcaseDialog(context),
                       icon: Stack(
                         children: [
                           Icon(
@@ -130,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                       title: tr('home.menu_2_title'),
                       subtitle: tr('home.menu_2_description'),
                       buttonTitle: tr('home.menu_2_button'),
-                      onTap: () {},
+                      onTap: () => showShowcaseDialog(context),
                       imageLeftPosition: false,
                     ),
                     Gap(24.h),
@@ -139,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                       title: tr('home.menu_3_title'),
                       subtitle: tr('home.menu_3_description'),
                       buttonTitle: tr('home.menu_3_button'),
-                      onTap: () {},
+                      onTap: () => showShowcaseDialog(context),
                       imageLeftPosition: true,
                     ),
                     Gap(24.h),
@@ -148,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () => showShowcaseDialog(context),
                             icon: Icon(
                               Icons.tune_rounded,
                               color: Theme.of(context).primaryColor,

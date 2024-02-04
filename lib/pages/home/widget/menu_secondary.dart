@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:medicare/app/app.dart';
+import 'package:medicare/widgets/showcase_dialog.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class MenuSecondary extends StatelessWidget {
@@ -104,7 +105,7 @@ class MenuSecondary extends StatelessWidget {
                         Material(
                           color: Colors.transparent,
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () => showShowcaseDialog(context),
                             borderRadius: BorderRadius.circular(8.w),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,

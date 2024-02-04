@@ -9,6 +9,7 @@ import 'package:medicare/app/app.dart';
 import 'package:medicare/blocs/_index.dart';
 import 'package:medicare/constants/assets_constants.dart';
 import 'package:medicare/widgets/shimmer_widget.dart';
+import 'package:medicare/widgets/showcase_dialog.dart';
 import 'package:medicare/widgets/toggle_switch.dart';
 
 import 'service_item.dart.dart';
@@ -134,7 +135,7 @@ class ListServices extends StatelessWidget {
         horizontal: 15.w,
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () => showShowcaseDialog(context),
         borderRadius: BorderRadius.circular(8.w),
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 10.h),
